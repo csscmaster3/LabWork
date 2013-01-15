@@ -51,6 +51,10 @@ def GameMenu(UserID):
     print(' '*10+'*'+' '*49 +'*')
 
 # mpk Calculate the margins for a message that changes
+    greeting='Welcome to Game World, '+UserID+'!'
+    greetingLength=(len(greeting))
+    margins=((46-greetingLength)/2)
+    print(' '*9,'*'+' '*int(margins),greeting,' '*int(margins),'*')
 
 
 
