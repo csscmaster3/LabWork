@@ -1,8 +1,9 @@
-# 
-# 
-# 
-# 
-# 
+# Project Name: Game World
+# 15/01/2013
+# Kevin Varcasio
+# Training project to demonstrate concepts from the lectures.
+# Presentes a menu of games to the user and plays the game the user chooses.
+
 
 import os
 import random
@@ -24,9 +25,14 @@ def getPassword():
     print()
     print(' '*10+'*'+' '*49 +'*')
 
-# mpk Read in User ID and Password
+# KV Read in User ID and Password
+    userName=input('    Please enter user ID:')
+    passWord=input('    Please enter password: ')
+    print(' '*10+'*'+' '*49+'*')
  
-# mpk Clear the Screen and Call the Game Menu function    
+# KV Clear the Screen and Call the Game Menu function
+    os.system('cls')
+    GameMenu(userName)
    
 
 
@@ -95,6 +101,7 @@ def Craps():
 
 
 # mpk Pause the screen
+    input(' '*10+'Press any key to continue...')
 
 
 # mpk Set up the screen Toss #2
@@ -115,7 +122,8 @@ def Craps():
     #print()
     print(' '*7+'='*56+'=')
 
-# mpk Pause the screen 
+# mpk Pause the screen
+    input(' '*10+'Press any key to continue...')
 
 
 # mpk Set up the screen Toss #3
@@ -137,14 +145,15 @@ def Craps():
     print(' '*7+'='*56+'=')
 
 # mpk Pause the screen
-
+    input(' '*10+'Press any key to continue...')
 
 ####################################################################################
 ####################################################################################
 
-# mpk Declare the Main() function
-
-
+# KV Declare the Main() function
+def Main():
+    getPassword()
+    print()
 
 # mpk Call the Main() function
-
+Main()
