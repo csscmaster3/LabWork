@@ -26,8 +26,8 @@ def getPassword():
     print(' '*10+'*'+' '*49 +'*')
 
 # KV Read in User ID and Password
-    userName=input('    Please enter user ID:')
-    passWord=input('    Please enter password: ')
+    userName=input(' '*10+'Please enter user ID:')
+    passWord=input(' '*10+'Please enter password: ')
     print(' '*10+'*'+' '*49+'*')
  
 # KV Clear the Screen and Call the Game Menu function
@@ -54,7 +54,7 @@ def GameMenu(UserID):
     greeting='Welcome to Game World, '+UserID+'!'
     greetingLength=(len(greeting))
     margins=((46-greetingLength)/2)
-    print(' '*9,'*'+' '*int(margins),greeting,' '*int(margins),'*')
+    print(' '*9,'*'+' '*int(margins),greeting,' '*int(margins+.5),'*')
 
 
 
@@ -72,15 +72,18 @@ def GameMenu(UserID):
     print(' '*10+'='*50+'=')
     print()
 
-# mpk Read in the user's choice of game
+# KV Read in the user's choice of game
+    gameChoice=input(' '*10+'Please choose a game:')
+    
 
 
-# Call the correct game based on the user's choice    
-
+# KV Call the correct game based on the user's choice    
+    Craps()
 
 
 ####################################################################################
 ####################################################################################
+
 
 def Craps():
 # mpk Demonstrates random number generation
@@ -88,9 +91,11 @@ def Craps():
 # mpk Set up the screen
     
 
-# mpk generate random numbers 1 - 6
-
-
+# KV generate random numbers 1 - 6
+    die1=random.randint(1,6)
+    die2=random.randint(1,6)
+    total=die1+die2
+    
 # mpk Output Results
     print()
     print()
@@ -112,7 +117,9 @@ def Craps():
     
 
 # mpk generate random numbers 1 - 6
-
+    die1=random.randint(1,6)
+    die2=random.randint(1,6)
+    total=die1+die2
 
 # mpk Output Results
     print()
@@ -133,8 +140,10 @@ def Craps():
 # mpk Set up the screen Toss #3
     
 
-# mpk generate random numbers 1 - 6
-
+# KV generate random numbers 1 - 6
+    die1=random.randint(1,6)
+    die2=random.randint(1,6)
+    total=die1+die2
 
 # mpk Output Results
     print()
