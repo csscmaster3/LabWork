@@ -8,7 +8,7 @@ def main():
     intro()
     
     #KV Find out cups needed from the user
-    cups_needed = int(input('Enter the number of cups: '))
+    cups_needed = float(input('Enter the number of cups: '))
     
     #KV Call function to Convert from cups to ounces
     cups_to_ounces(cups_needed)
