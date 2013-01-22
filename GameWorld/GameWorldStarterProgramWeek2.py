@@ -29,7 +29,18 @@ def getPassword():
     userName=input(' '*10+'Please enter user ID:')
     passWord=input(' '*10+'Please enter password: ')
     print(' '*10+'*'+' '*49+'*')
- 
+    
+# KV Validate the username and password
+    if userName=='' or passWord=='':
+        print(' '*10+'Please enter a valid Username and Password.')
+        userName=input(' '*10+'Please enter user ID:')
+        passWord=input(' '*10+'Please enter password: ')
+
+    if passWord!="happy":
+        print(' '*10+'Please enter a valid password')
+        passWord=input(' '*10+'Please enter password: ')
+
+     
 # KV Clear the Screen and Call the Game Menu function
     os.system('cls')
     GameMenu(userName)
@@ -54,8 +65,14 @@ def GameMenu(UserID):
     greeting='Welcome to Game World, '+UserID+'!'
     greetingLength=(len(greeting))
     margins=((46-greetingLength)/2)
-    print(' '*9,'*'+' '*int(margins),greeting,' '*int(margins+.5),'*')
-
+    if len(UserID) % 2==0:
+        #KV Even Number
+        margins=((46-greetingLength)/2)
+        print(' '*9,'*'+' '*int(margins),greeting,' '*int(margins),'*')
+    else:
+        #KV Odd Number
+        margins=((46-greetingLength)/2)
+        print(' '*9,'*'+' '*int(margins),greeting,' '*int(margins+1),'*')
 
 
 
@@ -72,13 +89,35 @@ def GameMenu(UserID):
     print(' '*10+'='*50+'=')
     print()
 
-# KV Read in the user's choice of game
+
+# KV Read in the user's choice of game and call the correct game
     gameChoice=input(' '*10+'Please choose a game:')
+    getGame(gameChoice)
+
+
+# KV Call the correct game based on the user's choice
+def getGame(gameChoice):
+    screenPause=" "*10+"Press any key to continue..."
+    if gameChoice=="1":
+        Craps()
+    elif gameChoice=="2":
+        print()
+        print(" "*9,"Game under construction.  Please try again later.")
+        input(screenPause)
+    elif gameChoice=="3":
+        print()
+        print(" "*9,"Game under construction.  Please try again later.")
+        input(screenPause)
+    elif gameChoice=="4":
+        print()
+        print(" "*9,"Game under construction.  Please try again later.")
+        input(screenPause)
+    else:
+        print()
+        print(' '*9,'You have entered an invalid menu choice.')
+        gameChoice=input(' '*10+'Please choose a game between 1 and 4: ')
+        getGame(gameChoice)
     
-
-
-# KV Call the correct game based on the user's choice    
-    Craps()
 
 
 ####################################################################################
@@ -102,7 +141,16 @@ def Craps():
     print()
     print(' '*7+'='*56+'=')
     print(' '*7+'|*   *|'+' '*41+'  |*   *|')
-    print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +'  |  *  |')
+    
+    #KV Fix margins for 2 digit numbers
+    if total > 9:
+        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +' |  *  |')
+    else:
+        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +'  |  *  |')
+
+
+
+        
     print(' '*7+'|*   *|'+' '*41+'  |*   *|')      
     #print(' '*7+' -----  You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!'+' -----')
     #print()
@@ -127,7 +175,11 @@ def Craps():
     print()
     print(' '*7+'='*56+'=')
     print(' '*7+'|*   *|'+' '*41+'  |*   *|')
-    print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +'  |  *  |')
+   #KV Fix margins for 2 digit numbers
+    if total > 9:
+        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +' |  *  |')
+    else:
+        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +'  |  *  |')
     print(' '*7+'|*   *|'+' '*41+'  |*   *|')      
     #print(' '*7+' -----  You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!'+' -----')
     #print()
@@ -151,7 +203,11 @@ def Craps():
     print()
     print(' '*7+'='*56+'=')
     print(' '*7+'|*   *|'+' '*41+'  |*   *|')
-    print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +'  |  *  |')
+    #KV Fix margins for 2 digit numbers
+    if total > 9:
+        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +' |  *  |')
+    else:
+        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +'  |  *  |')
     print(' '*7+'|*   *|'+' '*41+'  |*   *|')      
     #print(' '*7+' -----  You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!'+' -----')
     #print()
