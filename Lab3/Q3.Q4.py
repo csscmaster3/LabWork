@@ -1,10 +1,10 @@
-#KV Declare variable
+#KV Q3 Declare variable
 
 exam=int(input('Exam score:'))
 programsDone=int(input('programsDone:'))
 
 
-
+#KV Q3 Compare against 60 and 10 display pass/fail
 if exam>=60 and programsDone>=10:
     print('Passed')
 else:
@@ -12,6 +12,7 @@ else:
 
 print()
 
+#KV Q4, testing of IF statements
 if 0:
     print('0 is true\n')
 else:
@@ -44,7 +45,7 @@ elif(extra==0):
 else:
     print('large\n')
 
-
+#KV Q4 compare n to the same statement
 n=0
 print('N=',n,'(n<0 or (0<=n<=100) or n>100) is',n<0 or (0<=n<=100) or n>100 )
 n=150
