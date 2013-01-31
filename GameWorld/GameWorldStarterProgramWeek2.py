@@ -8,6 +8,11 @@
 import os
 import random
 import math
+import GameWorldCraps
+
+
+#KV
+totalScore = 0
 
 def getPassword():
     
@@ -99,7 +104,7 @@ def GameMenu(UserID):
 def getGame(gameChoice):
     screenPause=" "*10+"Press any key to continue..."
     if gameChoice=="1":
-        Craps()
+        crapsScore= GameWorldCraps.Craps()
     elif gameChoice=="2":
         print()
         print(" "*9,"Game under construction.  Please try again later.")
@@ -117,104 +122,6 @@ def getGame(gameChoice):
         print(' '*9,'You have entered an invalid menu choice.')
         gameChoice=input(' '*10+'Please choose a game between 1 and 4: ')
         getGame(gameChoice)
-    
-
-
-####################################################################################
-####################################################################################
-
-
-def Craps():
-# mpk Demonstrates random number generation
-
-# mpk Set up the screen
-    
-
-# KV generate random numbers 1 - 6
-    die1=random.randint(1,6)
-    die2=random.randint(1,6)
-    total=die1+die2
-    
-# mpk Output Results
-    print()
-    print()
-    print()
-    print(' '*7+'='*56+'=')
-    print(' '*7+'|*   *|'+' '*41+'  |*   *|')
-    
-    #KV Fix margins for 2 digit numbers
-    if total > 9:
-        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +' |  *  |')
-    else:
-        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +'  |  *  |')
-
-
-
-        
-    print(' '*7+'|*   *|'+' '*41+'  |*   *|')      
-    #print(' '*7+' -----  You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!'+' -----')
-    #print()
-    print(' '*7+'='*56+'=')
-
-
-# mpk Pause the screen
-    input(' '*10+'Press any key to continue...')
-
-
-# mpk Set up the screen Toss #2
-    
-
-# mpk generate random numbers 1 - 6
-    die1=random.randint(1,6)
-    die2=random.randint(1,6)
-    total=die1+die2
-
-# mpk Output Results
-    print()
-    print()
-    print()
-    print(' '*7+'='*56+'=')
-    print(' '*7+'|*   *|'+' '*41+'  |*   *|')
-   #KV Fix margins for 2 digit numbers
-    if total > 9:
-        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +' |  *  |')
-    else:
-        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +'  |  *  |')
-    print(' '*7+'|*   *|'+' '*41+'  |*   *|')      
-    #print(' '*7+' -----  You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!'+' -----')
-    #print()
-    print(' '*7+'='*56+'=')
-
-# mpk Pause the screen
-    input(' '*10+'Press any key to continue...')
-
-
-# mpk Set up the screen Toss #3
-    
-
-# KV generate random numbers 1 - 6
-    die1=random.randint(1,6)
-    die2=random.randint(1,6)
-    total=die1+die2
-
-# mpk Output Results
-    print()
-    print()
-    print()
-    print(' '*7+'='*56+'=')
-    print(' '*7+'|*   *|'+' '*41+'  |*   *|')
-    #KV Fix margins for 2 digit numbers
-    if total > 9:
-        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +' |  *  |')
-    else:
-        print(' '*7 + '|  *  | You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!' +'  |  *  |')
-    print(' '*7+'|*   *|'+' '*41+'  |*   *|')      
-    #print(' '*7+' -----  You rolled a', die1, 'and a', die2, 'for a total of', str(total)+ '!'+' -----')
-    #print()
-    print(' '*7+'='*56+'=')
-
-# mpk Pause the screen
-    input(' '*10+'Press any key to continue...')
 
 ####################################################################################
 ####################################################################################
