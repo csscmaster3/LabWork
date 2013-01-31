@@ -11,7 +11,7 @@ import math
 import GameWorldCraps
 
 
-#KV
+#KV define the Score variable
 totalScore = 0
 
 def getPassword():
@@ -105,6 +105,17 @@ def getGame(gameChoice):
     screenPause=" "*10+"Press any key to continue..."
     if gameChoice=="1":
         crapsScore= GameWorldCraps.Craps()
+#KV Displays the craps score to the user
+        os.system('cls')
+        print()
+        if crapsScore > 0:
+            print(" "*14, "Congratulations! Your Craps score is",str(crapsScore)+".")
+        else:
+            print(" "*20, "Your Craps score is",str(crapsScore)+".")
+#KV Shows the total score to the user
+        global totalScore
+        totalScore = totalScore + crapsScore
+        print(" "*12, "Your total score for this game session is",str(crapsScore)+".")
     elif gameChoice=="2":
         print()
         print(" "*9,"Game under construction.  Please try again later.")
