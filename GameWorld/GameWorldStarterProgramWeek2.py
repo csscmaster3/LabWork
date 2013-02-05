@@ -9,6 +9,7 @@ import os
 import random
 import math
 import GameWorldCraps
+import GameWorldGuessMyNumber
 
 
 #KV define the Score variable
