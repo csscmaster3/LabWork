@@ -37,12 +37,15 @@ def getPassword():
     print(' '*10+'*'+' '*49+'*')
     
 # KV Validate the username and password
-    if userName=='' or passWord=='':
+    while userName=='' or passWord=='':
+        print(' '*10+'*'+' '*49+'*')
         print(' '*10+'Please enter a valid Username and Password.')
         userName=input(' '*10+'Please enter user ID:')
-        passWord=input(' '*10+'Please enter password: ')
-
-    if passWord!="happy":
+        passWord=input(' '*10+'Please enter password:')
+        
+                
+    while passWord!="happy":
+        print(' '*10+'*'+' '*49+'*')
         print(' '*10+'Please enter a valid password')
         passWord=input(' '*10+'Please enter password: ')
 
@@ -103,17 +106,34 @@ def GameMenu(UserID):
 
 # KV Call the correct game based on the user's choice
 def getGame(gameChoice):
+
     screenPause=" "*10+"Press any key to continue..."
+    
+    while gameChoice != "1" and gameChoice != "2":
+        if gameChoice=="3":
+            print()
+            print(" "*9,"Game under construction.  Please try again later.")
+            gameChoice=input(' '*10+'Please choose a game between 1 and 4: ')      
+        elif gameChoice=="4":
+            print()
+            print(" "*9,"Game under construction.  Please try again later.")
+            gameChoice=input(' '*10+'Please choose a game between 1 and 4: ')
+        else:
+            print()
+            print(' '*9,'You have entered an invalid menu choice.')
+            gameChoice=input(' '*10+'Please choose a game between 1 and 4: ')
+
+
     if gameChoice=="1":
         crapsScore= GameWorldCraps.Craps()
-#KV Displays the craps score to the user
+        #KV Displays the craps score to the user
         os.system('cls')
         print()
         if crapsScore > 0:
             print(" "*14, "Congratulations! Your Craps score is",str(crapsScore)+".")
         else:
             print(" "*20, "Your Craps score is",str(crapsScore)+".")
-#KV Shows the total score to the user
+        #KV Shows the total score to the user
         global totalScore
         totalScore = totalScore + crapsScore
         print(" "*12, "Your total score for this game session is",str(crapsScore)+".")
@@ -121,19 +141,7 @@ def getGame(gameChoice):
         print()
         print(" "*9,"Game under construction.  Please try again later.")
         input(screenPause)
-    elif gameChoice=="3":
-        print()
-        print(" "*9,"Game under construction.  Please try again later.")
-        input(screenPause)
-    elif gameChoice=="4":
-        print()
-        print(" "*9,"Game under construction.  Please try again later.")
-        input(screenPause)
-    else:
-        print()
-        print(' '*9,'You have entered an invalid menu choice.')
-        gameChoice=input(' '*10+'Please choose a game between 1 and 4: ')
-        getGame(gameChoice)
+    
 
 ####################################################################################
 ####################################################################################
