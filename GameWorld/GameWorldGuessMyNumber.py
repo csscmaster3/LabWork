@@ -4,13 +4,17 @@
 # mpk 
 # mpk 
 # mpk 
-# mpk 
+# mpk
+
+import os
+import random
 
 
 def guessMyNumber():
     
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    #mpk 
+    #KV score variable
+    guessMyNumberTotal = 0
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
@@ -29,19 +33,18 @@ def guessMyNumber():
     tries = 1
 
 #mpk guessing loop
+    while guess != the_number:
+        if guess > the_number:
+            print(' '*11+'Lower...')
+        else:
+            print(' '*11+'Higher...')
+
+        guess=int(input(' '*11+'Take a guess: '))
+        tries += 1
+
+    if tries <= 5:
+        guessMyNumberTotal += 1
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-
-
-
-
-
-
-
-
-
-
-
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 #mpk
@@ -49,7 +52,7 @@ def guessMyNumber():
     print(' '*12+"You guessed it!  The number was", the_number)
     print(' '*12+"And it only took you", tries, "tries!")
 #mpk
-    if tries <=3:
+    if tries <=5:
         print(" "*12+"Congratulations!  You earned a point.")
     else:
         print(" "*12+"Unfortunately, you didn't earn a point this time.")
@@ -57,7 +60,7 @@ def guessMyNumber():
   
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #mpk
-
+    return guessMyNumberTotal
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 

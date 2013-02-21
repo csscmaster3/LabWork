@@ -133,14 +133,18 @@ def getGame(gameChoice):
             print(" "*14, "Congratulations! Your Craps score is",str(crapsScore)+".")
         else:
             print(" "*20, "Your Craps score is",str(crapsScore)+".")
+            
         #KV Shows the total score to the user
         global totalScore
         totalScore = totalScore + crapsScore
-        print(" "*12, "Your total score for this game session is",str(crapsScore)+".")
+        
     elif gameChoice=="2":
-        print()
-        print(" "*9,"Game under construction.  Please try again later.")
-        input(screenPause)
+        guessMyNumberScore = GameWorldGuessMyNumber.guessMyNumber()
+        totalScore = totalScore + guessMyNumberScore
+
+    print()
+    print(" "*12+"Your total score for this game session is",str(totalScore)+".")
+    print(' '*12+'Press any key to continue...')
     
 
 ####################################################################################
