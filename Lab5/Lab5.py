@@ -50,7 +50,7 @@ def questionFour():
 def reverser(str):
     counter=0
 
-    for letter in reversed(str):
+    for letter in str.reversed():
         print(letter)
 
 def questionFive():
