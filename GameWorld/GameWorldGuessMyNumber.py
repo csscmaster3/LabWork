@@ -29,8 +29,12 @@ def guessMyNumber():
 #mpk
     the_number = random.randint(1, 100)
 #mpk 
-    guess = int(input(" "*11+"Take a guess: "))
-    tries = 1
+    strGuess = input(" "*11+"Take a guess: ")
+    while not strGuess.isdigit():
+        strGuess = input(" "*11+'Your guess must be a number: ')
+    guess=int(strGuess)
+    
+    tries=1
 
 #mpk guessing loop
     while guess != the_number:
@@ -39,7 +43,10 @@ def guessMyNumber():
         else:
             print(' '*11+'Higher...')
 
-        guess=int(input(' '*11+'Take a guess: '))
+        strGuess = input(" "*11+"Take a guess: ")
+        while not strGuess.isdigit():
+            strGuess = input(" "*11+'Your guess must be a number: ')
+        guess=int(strGuess)
         tries += 1
 
     if tries <= 5:

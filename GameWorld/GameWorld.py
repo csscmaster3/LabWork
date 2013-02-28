@@ -10,6 +10,7 @@ import random
 import math
 import GameWorldCraps
 import GameWorldGuessMyNumber
+import GameWorldSillyStrings
 
 
 #KV define the Score variable
@@ -91,6 +92,7 @@ def GameMenu(UserID):
     print(' '*10+'*'+'   2. Guess The Number'+' '*27 +'*')
     print(' '*10+'*'+'   3. Word Jumble'+' '*32 +'*')
     print(' '*10+'*'+'   4. Hangman'+' '*36 +'*')
+    print(' '*10+'*'+'   5. Silly Strings'+' '*30 +'*')
     print(' '*10+'*'+' '*49 +'*')
     print(' '*10+'*'+' '*49 +'*')
     
@@ -109,19 +111,19 @@ def getGame(gameChoice):
 
     screenPause=" "*10+"Press any key to continue..."
     
-    while gameChoice != "1" and gameChoice != "2":
+    while not gameChoice in ['1','2','5']:
         if gameChoice=="3":
             print()
             print(" "*9,"Game under construction.  Please try again later.")
-            gameChoice=input(' '*10+'Please choose a game between 1 and 4: ')      
+            gameChoice=input(' '*10+'Please choose a game between 1 and 5: ')      
         elif gameChoice=="4":
             print()
             print(" "*9,"Game under construction.  Please try again later.")
-            gameChoice=input(' '*10+'Please choose a game between 1 and 4: ')
+            gameChoice=input(' '*10+'Please choose a game between 1 and 5: ')
         else:
             print()
             print(' '*9,'You have entered an invalid menu choice.')
-            gameChoice=input(' '*10+'Please choose a game between 1 and 4: ')
+            gameChoice=input(' '*10+'Please choose a game between 1 and 5: ')
 
 
     if gameChoice=="1":
@@ -141,6 +143,11 @@ def getGame(gameChoice):
     elif gameChoice=="2":
         guessMyNumberScore = GameWorldGuessMyNumber.guessMyNumber()
         totalScore = totalScore + guessMyNumberScore
+
+    elif gameChoice=="5":
+        sillyStringScore = GameWorldSillyStrings.sillyStrings()
+        totalScore = totalScore + sillyStringScore
+
 
     print()
     print(" "*12+"Your total score for this game session is",str(totalScore)+".")

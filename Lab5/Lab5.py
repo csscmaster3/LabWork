@@ -50,7 +50,7 @@ def questionFour():
 def reverser(str):
     counter=0
 
-    for letter in str.reversed():
+    for letter in reversed(str):
         print(letter)
 
 def questionFive():
@@ -123,18 +123,18 @@ def questionSix():
 
     
 def main():
-    question=int(input('Which question? '))
-    if question==1:
+    question=input('Which question? ')
+    if question=='1':
         questionOne()
-    if question==2:
+    if question=='2':
         questionTwo()
-    if question==3:
+    if question=='3':
         questionThree()
-    if question==4:
+    if question=='4':
         questionFour()
-    if question==5:
+    if question=='5':
         questionFive()
-    if question==6:
+    if question=='6':
         questionSix()
     else:
         main()
