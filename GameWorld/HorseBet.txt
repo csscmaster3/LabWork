@@ -8,13 +8,13 @@ import random
 import datetime
 import os
 
-#KV - Initialization of the horse names and variables
+#KV - Initialization of the horse names and variable
 horses=['Seabiscuit','Poe',"Santa's Little Helper",'Mickey','Above and Beyond',\
         'Ace of Spades','Big League','Captain Canada','Dareto Dream']
 
 times=[0,1,2]
 
-#DZ Intro to the game
+#DZ Game Header
 def intro():
     print('|Horse Betting Version 1.0|'.center(60,'_'))
     print('|Kevin Varcasio & Deng Zhu|'.center(60, ' '))
@@ -52,8 +52,7 @@ def gamble():
     bet=int(bet)
     if bet==0:
         score()
-        exit()
-    if bet<4 and bet>=1:
+    elif bet<4 and bet>=1:
         race(bet)   
     else:
         print('Invalid horse')
@@ -118,14 +117,12 @@ def race(betA):
     gamble()
 
 
-#KV - Displays the final score and then pauses the program (Dos command to force the user to press enter to continue) - this then ends the if statement in
-# gamble() and the program exits
+#KV - Displays the final score.
 def score():
     print('Your score is: ',horseBetScore,'. Thanks for playing!')
-    os.system('pause')
 
 #DZ - Define main.  Starts program, welcome message, prepares variables and lists for game.  Starts gambling.
-def main():
+def horseBet():
     global racers
     global horseBetScore
 
@@ -139,8 +136,9 @@ def main():
     print('The horses for the previous race and their times are: ')
     listResults()
     gamble()
+    os.system('pause')
+    return horseBetScore
 
-main()
 
 
 

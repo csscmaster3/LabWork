@@ -17,7 +17,9 @@ import HorseBet
 #KV define the Score variable
 totalScore = 0
 
+
 def getPassword():
+    global userName
     
 # mpk Print password screen 
     os.system('cls')
@@ -157,12 +159,15 @@ def getGame(gameChoice):
         totalScore = totalScore + horseBetScore
 
     elif gameChoice=='7':
-        exit
+        print()
+        print(" "*12+"Your total score for this game session is",str(totalScore)+".")
+        os.system('pause')
+        exit()
+        
+    
 
-
-    print()
-    print(" "*12+"Your total score for this game session is",str(totalScore)+".")
-    print(' '*12+'Press any key to continue...')
+    
+    GameMenu(userName)
     
 
 ####################################################################################

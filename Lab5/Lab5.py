@@ -1,3 +1,9 @@
+## Chapter 8 Lab
+## 3/14/2013
+## Kevin Varcasio
+## Doing the chapter 8 lab
+
+#KV force the input to be lower case so that both Y or y would pass the test
 def questionOne():
     print()
     choice=input('Input y or Y: ')
@@ -10,6 +16,8 @@ def questionOne():
     print()
     main()
 
+
+#KV counts the number of free spaces in a string.  The string is given.
 def questionTwo():
     print()
     myString='The best things in live are free.'
@@ -26,7 +34,7 @@ def questionTwo():
     print()
     main()
 
-
+#KV Checks to see if the user entered string ends in .com
 def questionThree():
     print()
     str=input('Please enter a string: ')
@@ -40,6 +48,7 @@ def comChecker(str):
     else:
         print('Your string did not end in .com')
 
+#KV User enters a string and then it is displayed backwards to them one character per line
 def questionFour():
     print()
     str=input('Please enter a string: ')
@@ -53,6 +62,10 @@ def reverser(str):
     for letter in reversed(str):
         print(letter)
 
+
+        
+#KV This function has the lowercase1-5 scenarios from the lab entered into it.  It returns a True/False value depending on the string entered.
+#I used 'test' as my string
 def questionFive():
     print()
     str=input('Enter a string: ')
@@ -94,6 +107,8 @@ def any_lowercase5(s):
     return True
 
 
+#KV The user enters 3 strings.  The function checks to see if the first and second string are in the third string.  It then switches the first and second string in
+#third string
 def questionSix():
     print()
     string1=input('Please enter the first string: ')
