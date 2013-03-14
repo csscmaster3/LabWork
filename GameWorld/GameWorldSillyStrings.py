@@ -25,8 +25,26 @@ def sillyStrings():
     print(' '*10,"            Finish off a word with an 'X'")
     print(' '*10,"           Enter 'XXXXXXXXX' to Quit.\n")
 
+
+
+
+    try:
+        fin=open('c:/temp/sillyStrings.txt', 'r')
+        print(' '*22, 'COntinuing Saved Game...\n')
+        print(' '*10+'*'*49)
+        for line in fin:
+            if "X X X X X X X X X" not in line:
+                nextLine=line[0:27]
+                print(' '*10+'*'+' '*10+nextLine+' '*10+' ')
+                gameBoard.append(nextLine)
+
+        print(' '*10+'*'*49)
+
 #mpk 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    except:
+        print()
+        
     sillyStringScore=buildStrings()
     return sillyStringScore
     
@@ -73,14 +91,35 @@ def buildStrings():
         print(" "*10+"*"*49)
         for lines in range(len(gameBoard)):
             print(" "*10+"*"+" "*10+gameBoard[lines]+" "*10+"*")
-            print(" "*10+"*"*49)
+        print(" "*10+"*"*49)
 
 
 #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!        print(" "*10+"*"*49)
 
 #============================================================================
 #mpk
-    sillyStringScore=int(input(" "*10+"Enter your score for the game: "))
+    gameBoardSave=input('Sve this game? (Y/N) ')
+    if gameBoardSave.upper() in ['Y', 'yes']:
+        fout=open('c:/temp/sillyStrings.txt', 'w')
+        for lines in gameBoard:
+            fout.write(lines+'\n')
+        fout.close()
+        print('The files is saved')
+    else:
+        print('Game was not saved')
+
+    try:
+        sillyStringsScore=int(input(' '*10+'Enter your game for the game: '))
+
+    except:
+        silly=input(' '*10+'Enter your score for the game: ')
+        while not silly.isdigit():
+            silly=input(' '*10+'Enter your score for the game: ')
+
+            
+
+        
+        sillyStringScore=int(silly)
     return sillyStringScore
 
 #============================================================================

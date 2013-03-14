@@ -1,4 +1,4 @@
-# Project Name: Game World
+# Project Name: Game Worldy
 # 15/01/2013
 # Kevin Varcasio
 # Training project to demonstrate concepts from the lectures.
@@ -11,6 +11,7 @@ import math
 import GameWorldCraps
 import GameWorldGuessMyNumber
 import GameWorldSillyStrings
+import HorseBet
 
 
 #KV define the Score variable
@@ -93,6 +94,8 @@ def GameMenu(UserID):
     print(' '*10+'*'+'   3. Word Jumble'+' '*32 +'*')
     print(' '*10+'*'+'   4. Hangman'+' '*36 +'*')
     print(' '*10+'*'+'   5. Silly Strings'+' '*30 +'*')
+    print(' '*10+'*'+'   6. Horse Betting'+' '*30 +'*')
+    print(' '*10+'*'+'   7. Exit'+' '*39 +'*')
     print(' '*10+'*'+' '*49 +'*')
     print(' '*10+'*'+' '*49 +'*')
     
@@ -111,7 +114,7 @@ def getGame(gameChoice):
 
     screenPause=" "*10+"Press any key to continue..."
     
-    while not gameChoice in ['1','2','5']:
+    while not gameChoice in ['1','2','5','6','7']:
         if gameChoice=="3":
             print()
             print(" "*9,"Game under construction.  Please try again later.")
@@ -126,6 +129,7 @@ def getGame(gameChoice):
             gameChoice=input(' '*10+'Please choose a game between 1 and 5: ')
 
 
+    global totalSore
     if gameChoice=="1":
         crapsScore= GameWorldCraps.Craps()
         #KV Displays the craps score to the user
@@ -147,6 +151,13 @@ def getGame(gameChoice):
     elif gameChoice=="5":
         sillyStringScore = GameWorldSillyStrings.sillyStrings()
         totalScore = totalScore + sillyStringScore
+
+    elif gameChoice=="6":
+        horseBetScore = HorseBet.horseBet()
+        totalScore = totalScore + horseBetScore
+
+    elif gameChoice=='7':
+        exit
 
 
     print()
